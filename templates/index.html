@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Encryptor</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2 class="text-center">🕵️‍♂️ Secret File Encryptor</h2>
+        <hr>
+        
+        <h4>Encrypt a File</h4>
+        <form action="/upload" method="post" enctype="multipart/form-data" class="mb-4">
+            <div class="mb-3">
+                <label class="form-label">Select File</label>
+                <input type="file" name="file" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Encryption Key</label>
+                <input type="text" name="key" class="form-control" placeholder="Enter Key" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Encryption Method</label>
+                <select name="method" class="form-select">
+                    <option value="AES">AES</option>
+                    <option value="DES">DES</option>
+                    <option value="RC4">RC4</option>
+                    <option value="XOR">XOR</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary btn-custom">Encrypt & Download</button>
+        </form>
+        
+        <h4>Decrypt a File</h4>
+        <form action="/decrypt" method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label class="form-label">Select File</label>
+                <input type="file" name="file" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Decryption Key</label>
+                <input type="text" name="key" class="form-control" placeholder="Enter Key" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Decryption Method</label>
+                <select name="method" class="form-select">
+                    <option value="AES">AES</option>
+                    <option value="DES">DES</option>
+                    <option value="RC4">RC4</option>
+                    <option value="XOR">XOR</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-success btn-custom">Decrypt & Download</button>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
