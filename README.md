@@ -1,2 +1,2 @@
 # encryption-application
-tugas untuk memenuhi mata kuliah kriptografi dan keamana data
+tugas untuk memenuhi mata kuliah kriptografi dan keamanan data
